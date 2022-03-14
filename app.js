@@ -30,4 +30,8 @@ if (process.env.NODE_ENV == "production") {
 app.use("/api/v1", userRoutes);
 app.use("/api/v1", postRoutes);
 
+app.get("/", (req, res) => {
+  res.send("<h1>Working</h1>");
+});
+
 module.exports = app;
