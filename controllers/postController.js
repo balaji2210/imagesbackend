@@ -101,3 +101,16 @@ exports.getLoggedInUserPosts = BigPromise(async (req, res, next) => {
     posts,
   });
 });
+
+exports.getAllPosts = BigPromise(async (req, res, next) => {
+  const posts = await Post.find();
+
+  if (!posts) {
+    return next(new CustomError("No posts found", 401));
+  }
+
+  res.status(200).json({
+    success: true,
+    posts,
+  });
+});

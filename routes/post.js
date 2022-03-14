@@ -18,5 +18,6 @@ router.route("/delete/:id").delete(isLoggedIn, deletePost);
 router.route("/posts").get(isLoggedIn, getAllPosts);
 router.route("/post/:id").get(isLoggedIn, getPostId);
 router.route("/posts/:id").get(isLoggedIn, getLoggedInUserPosts);
+router.route("/allposts").get(getAllPosts);
 
 module.exports = router;
